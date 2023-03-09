@@ -1,18 +1,17 @@
-#include <stdio.h>
+#include "main.h"
 #include <stdarg.h>
 
 /**
-* handle_char - character specifier
+* handle_character - character specifier
 * handle_string - string specifier
-* handle_percent - percent specifier 
-* @args: argument list containing the char/string to printas the next element
+* @args: argument list containing the char to printas the next element
 * Return: number of bytes printed
 */
 
-void handle_char(va_list args)
+void handle_character(va_list args)
 {
 	char c = va_args(args, int);
-	_putchar(c);
+	int count = 0, retval;
 
 	retval = _putchar(c);
 	if (retval == -1)
@@ -22,6 +21,11 @@ void handle_char(va_list args)
 	return (count);
 }
 
+/**
+* handle_string - string specifier
+* @args: argument list
+* Return: number of bytes printed
+*/
 void handle_string(va_list args)
 {
 	char *s = va_arg(args, char*);
