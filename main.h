@@ -18,13 +18,13 @@ typedef struct specifiers
 {
 	char *letter;
 	void (*handle)(va_list);
-};
+} function_t;
 
 int _printf(const char *format, ...);
 int _putchar(char c);
-int handle_character(va_list *args);
-int handle_string(va_list *args);
-int handle_percent(va_list *args);
+int handle_character(va_list args);
+int handle_string(va_list args);
+int handle_percent(va_list args);
 
 
 
