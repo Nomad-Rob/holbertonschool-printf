@@ -8,9 +8,9 @@
 * Return: number of bytes printed
 */
 
-void handle_character(va_list args)
+int handle_character(va_list args)
 {
-	char c = va_args(args, int);
+	char c = va_arg(args, int);
 	int count = 0, retval;
 
 	retval = _putchar(c);
@@ -26,7 +26,7 @@ void handle_character(va_list args)
 * @args: argument list
 * Return: number of bytes printed
 */
-void handle_string(va_list args)
+int handle_string(va_list args)
 {
 	char *s = va_arg(args, char*);
 	int count = 0;
@@ -43,4 +43,5 @@ void handle_string(va_list args)
 		count++;
 		s++;
 	}
+	return (count);
 }

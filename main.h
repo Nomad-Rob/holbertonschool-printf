@@ -10,21 +10,21 @@
 * struct specifiers - structure to find the correct function
 * and specifiers
 * @letter: specifier conversion
-* @handler: function
+* @handle: function
 *
 */
 
 typedef struct specifiers
 {
-	char letter;
+	char *letter;
 	void (*handle)(va_list);
-}
+};
 
 int _printf(const char *format, ...);
 int _putchar(char c);
-void handle_char(va_list args);
-void handle_string(va_list args);
-void handle_percent(va_list args);
+int handle_character(va_list *args);
+int handle_string(va_list *args);
+int handle_percent(va_list *args);
 
 
 
