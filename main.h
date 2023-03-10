@@ -6,6 +6,7 @@
 #include <stdarg.h>
 #include <stddef.h>
 #include <limits.h>
+#include <string.h>
 
 /**
 * struct specifiers - structure to find the correct function
