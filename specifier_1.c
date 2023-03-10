@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdarg.h>
 
 /**
 * handle_character - character specifier
@@ -44,4 +43,16 @@ int handle_string(va_list args)
 		s++;
 	}
 	return (count);
+}
+
+/**
+* handle_percent - pervcent specifier
+* @args: argument list
+* Return: 1
+*/
+
+int handle_percent(__attribute__((unused))va_list args)
+{
+	_putchar('%');
+	return (1);
 }
