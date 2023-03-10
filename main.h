@@ -20,12 +20,11 @@ typedef struct specifiers
 	void (*handle)(va_list);
 }
 
-//Main functions//
 int _printf(const char *format, ...);
-int _putchar(char c)
-void handle_char(va_list args)
-void handle_string(va_list args)
-void handle_percent(va_list args)
+int _putchar(char c);
+void handle_char(va_list args);
+void handle_string(va_list args);
+void handle_percent(va_list args);
 
 
 
