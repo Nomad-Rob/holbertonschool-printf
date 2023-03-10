@@ -21,37 +21,38 @@ int _printf(const char *format, ...)
 
 	while (*format)
 	{
-	if (*format == '%' && *(format + 1) != '%')
-	{
-		format++;
-		function = get_function(format);
-		if ((function) == NULL)
-			return (-1);
-
-		else if (function == NULL)
+		if (*format == '%' && *(format + 1) != '%')
 		{
-		_putchar(*(format - 1));
-		_putchar(*format);
-		count += 2;
+			format++;
+			function = get_function(format);
+			if (*(format) == '\0')
+				return (-1);
+
+			else if (function == NULL)
+			{
+				_putchar(*(format - 1));
+				_putchar(*format);
+				count += 2;
+			}
+			else
+		
+				count += function(args);
+		
+		}	
+		else if (*format == '%' && *(format + 1) == '%')
+		{
+			format++;
+			_putchar('%');
+			count++;
 		}
 		else
 		{
-		count += function(args);
+			_putchar(*format);
+			count++;
 		}
-	else if (*format == '%' && *(format + 1) == '%')
-	{
-	format++;
-	_putchar('%');
-	count++;
+
+			format++;
 	}
-	else
-		{
-		_putchar(*format);
-		count++;
-		}
-	{
-	format++;
-	}
-va_end(args);
-return (count);
+	va_end(args);
+	return (count);
 }

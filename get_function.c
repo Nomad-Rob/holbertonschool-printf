@@ -16,14 +16,14 @@ int (*get_function(const char *specifier))(va_list)
 	{
 		{"c", handle_character},
 		{"s", handle_string},
-		{"%", handle_percent};
-//{"d", handle_d},//
-//{"i", handle_i},//
+		{"%", handle_percent},
+/*{"d", handle_d},*/
+/*{"i", handle_i},*/
 	};
-	for (idx = 0, types[idx].letter; idx++)
+	for (idx = 0; types[idx].letter; idx++)
 	{
-		if (*specifier == type[idx].letter[0])
-			return (types[idx].specifier);
+		if (*specifier == types[idx].letter[0])
+			return (types[idx].handle);
 	}
 	return (NULL);
 }
