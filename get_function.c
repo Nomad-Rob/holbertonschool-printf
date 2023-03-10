@@ -12,10 +12,10 @@ int (*get_function(char *specifier))(va_list)
 {
 
 	function_t types[] = {
-		{"c", handle_c},
-		{"s", handle_s},
+		{"c", handle_character},
+		{"s", handle_string},
 		["%", handle_percent};
-//{"d", handle_c},//
+//{"d", handle_d},//
 //{"i", handle_i},//
 	};
 	int i = 0
