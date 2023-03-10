@@ -12,8 +12,8 @@ int (*get_function(const char *specifier))(va_list)
 {
 	int idx;
 
-	function_t types[] = 
-	{
+	function_t types[] = {
+
 		{"c", handle_character},
 		{"s", handle_string},
 		{"%", handle_percent},

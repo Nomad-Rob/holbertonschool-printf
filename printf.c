@@ -35,10 +35,10 @@ int _printf(const char *format, ...)
 				count += 2;
 			}
 			else
-		
+
 				count += function(args);
-		
-		}	
+
+		}
 		else if (*format == '%' && *(format + 1) == '%')
 		{
 			format++;
