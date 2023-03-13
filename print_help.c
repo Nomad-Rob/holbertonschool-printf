@@ -56,3 +56,22 @@ int _strlen(char *str)
 
 	return (count);
 }
+
+/**
+* countBinary - count how many digits the number is
+* @num: the number to be counted
+*
+* Return: the count
+*/
+int countBinary(unsigned int num)
+{
+	int count = 0;
+
+	while (num > 0)
+	{
+		count++;
+		num /= 2;
+	}
+	return (count);
+}
+

@@ -30,5 +30,6 @@ int handle_percent(__attribute__((unused))va_list args);
 int (*get_function(const char *specifier))(va_list);
 int handle_decimal(va_list args);
 int handle_integer(va_list args);
+int countBinary(unsigned int num)
 
 #endif
