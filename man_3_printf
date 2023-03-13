@@ -1,0 +1,89 @@
+TH _printf 3 "12 March 2023" "" "_printf man page"
+.SH NAME
+_printf - a function that writes output to stdout using a format string
+
+.SH SYNOPSIS
+.B #include "main.h"
+
+.BI "int _printf(const char *" "format, ..." ");"
+
+.SH DESCRIPTION
+The _printf function writes output to the stdout stream using a format string. The format string is comprised of 0 or more directives and contains specifiers beginning with the character (dq%(dq. The specifier uses the corresponding argument to print the variable.
+
+The \fB_printf\fR function supports the following specifiers:
+.TP
+d, i
+Prints the \fIint\fR argument in signed decimal notation.
+.TP
+u
+Prints the \fIunsigned int\fR argument in unsigned decimal notation.
+.TP
+o
+Prints the \fIunsigned int\fR argument in unsigned octal notation.
+.TP
+x, X
+Prints the \fIunsigned int\fR argument in unsigned hexadecimal notation. The letters (dqabcdef(dq are used for x; the letters (dqABCDEF(dq are used for X.
+.TP
+b
+Prints the \fIunsigned int\fR argument in unsigned binary notation.
+.TP
+c
+Converts the \fIint\fR argument to an \fIunsigned char\fR and prints it.
+.TP
+s
+Expects the \fIconst char *\fR argument to be a pointer to a character array. Characters up to, but not including, the terminating null byte are written.
+.TP
+%
+Writes a '%' character. No argument is converted.
+.TP
+p
+Prints the value of the \fIvoid *\fR pointer argument in hexadecimal format beginning with '0x'.
+.TP
+r
+Expects the \fIconst char *\fR argument to be a pointer to a character array. Characters are written in reverse order up to, but not including, the terminating null byte.
+.TP
+R
+Expects the \fIconst char *\fR argument to be a pointer to a character array. Characters are encoded into ROT13 and written up to, but not including, the terminating null byte.
+.TP
+F
+Prints an expletive regardless of the arguments passed to the function.
+
+The \fB_printf\fR function returns the number of bytes printed (excluding the null byte) on success, and returns -1 on failure.
+
+.SH EXAMPLES
+To print text mixed with a \fIname\fR string variable and an \fIage\fR integer variable:
+.PP
+.nf
+.RS
+#incliude "main.h"
+#include <stdlib.h>
+
+int main(int argc, char **argv)
+{
+int age;
+char *name;
+
+scss
+Copy code
+if (argc != 3)
+    return (-1);
+
+name = argv[1];
+age = atoi(argv[2]);
+
+_printf("Hello! My name is %s and I am %d years old.\n", name, age);
+
+return (0);
+}
+.fi
+.PP
+This program will output "Hello! My name is \fIname\fR and I am \fIage\fR years old." to the stdout stream.
+
+.SH SEE ALSO
+.BR printf (3)
+
+.SH AUTHORS
+Dominick Keeling, Bitch Boy Rob
+
+.SH BUGS
+The \fB_printf\fR function ------------------------
