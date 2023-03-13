@@ -38,7 +38,7 @@ Integer: printf("%i", 5); Output: 5
 * [VIM](https://www.vim.org/)
 
 ## Authors
-* [**Robert Farley**](https://github.com/Nomad-Rob) 
+* [**Robert Farley**](https://github.com/Nomad-Rob)
 * [**Dominick Keeling**](https://github.com/dominickkeeling)
 
 ## License
