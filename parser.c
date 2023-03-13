@@ -22,7 +22,7 @@ int parser(const char *format, function_t function_list[], va_list arg_list)
 			{
 				if (format[i + 1] == function_list[j].letter[0])
 				{
-					r_val = f_list[j].handle(arg_list);
+					r_val = function_list[j].handle(arg_list);
 					if (r_val == -1)
 						return (-1);
 					printed_chars += r_val;
