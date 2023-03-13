@@ -30,5 +30,7 @@ int handle_percent(__attribute__((unused))va_list args);
 int (*get_function(const char *specifier))(va_list);
 int handle_decimal(va_list args);
 int handle_integer(va_list args);
-
+int print_number(unsigned int n);
+int countDigits(unsigned int num);
+int _strlen(char *str);
 #endif
