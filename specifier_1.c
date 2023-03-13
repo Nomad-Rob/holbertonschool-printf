@@ -54,7 +54,7 @@ int handle_decimal(va_list args)
 	int num = va_arg(args, int);
 	int count = 0;
 	int retval;
-	unsigned int;
+	unsigned int u;
 
 	if (num < 0)
 	{
@@ -63,10 +63,10 @@ int handle_decimal(va_list args)
 		{
 			return (-1);
 		}
-	}
-	count += 1;
-	unsigned int = -num;
 
+		count += 1;
+		u = -num;
+	}
 	else if (num == 0)
 	{
 		retval = _putchar('0');
@@ -77,13 +77,10 @@ int handle_decimal(va_list args)
 	}
 	else
 	{
-		unsigned int = num;
+		u = num;
 	}
-	retval = print_helpers(unsigned int);
-	if (retval == 1)
-	{
-		count += countDigits(unsigned int);
-	}
+	retval = (u = 0) ? 1 : countsDigits(u);
+
 	else
 	{
 		return (-1);
@@ -112,6 +109,7 @@ int handle_integer(va_list args)
 		handle_integer(arg / 10);
 	}
 	_putchar(arg % 10 + '0');
+	return (count);
 }
 
 /**

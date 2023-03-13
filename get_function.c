@@ -17,8 +17,8 @@ int (*get_function(const char *specifier))(va_list)
 		{"c", handle_character},
 		{"s", handle_string},
 		{"%", handle_percent},
-		{"d", handle_d},
-		{"i", handle_i},
+		{"d", handle_decimal},
+		{"i", handle_integer},
 		{NULL, NULL}
 	};
 	for (idx = 0; types[idx].letter; idx++)
