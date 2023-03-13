@@ -79,8 +79,10 @@ int handle_decimal(va_list args)
 	{
 		u = num;
 	}
-	retval = (u = 0) ? 1 : countsDigits(u);
-
+	if
+	
+		retval = (u = 0) ? 1 : countDigits(u);
+	
 	else
 	{
 		return (-1);
@@ -106,10 +108,10 @@ int handle_integer(va_list args)
 	}
 	if (arg > 9)
 	{
-		handle_integer(arg / 10);
+		handle_integer(args / 10);
 	}
 	_putchar(arg % 10 + '0');
-	return (count);
+	return ();
 }
 
 /**

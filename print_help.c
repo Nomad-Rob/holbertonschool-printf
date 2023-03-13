@@ -24,7 +24,7 @@ int  print_number(unsigned int n)
 
 /**
 * countDigits - count how many digits the number is
-* @num: 
+* @num: the number being counted
 *
 * Return: the count
 */
