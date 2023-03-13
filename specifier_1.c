@@ -79,10 +79,8 @@ int handle_decimal(va_list args)
 	{
 		u = num;
 	}
-	if
-	
-		retval = (u = 0) ? 1 : countDigits(u);
-	
+	if (retval = (u = 0) ? 1 : countDigits(u))
+
 	else
 	{
 		return (-1);
@@ -99,19 +97,40 @@ int handle_decimal(va_list args)
 */
 int handle_integer(va_list args)
 {
-	int arg = va_arg(args, int);
+	int n = va_arg(args, int);
+	int i = 1;
+	int num, arg = n % 10, digit, exp = 1;
+
+	num = n;
+	n = n / 10;
 
 	if (arg < 0)
 	{
 		_putchar('-');
+		num = -num;
+		n = -n;
 		arg = -arg;
+		i++;
 	}
-	if (arg > 9)
+	if (num > 0)
 	{
-		handle_integer(args / 10);
+		while (num / 10 != 0)
+		{
+			exp = exp * 10;
+			num = num / 10;
+		}
+		num = n;
+		while (exp > 0)
+		{
+			digit = num / exp;
+			_putchar(digit + '0');
+			num = num - (digit * exp);
+			exp = exp / 10;
+			i++;
+		}	
 	}
-	_putchar(arg % 10 + '0');
-	return ();
+	_putchar(arg + '0');
+	return (i);
 }
 
 /**
