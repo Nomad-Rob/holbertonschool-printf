@@ -79,13 +79,19 @@ int handle_decimal(va_list args)
 	{
 		u = num;
 	}
-	if (retval = (u = 0) ? 1 : countDigits(u))
-
+	if (retval)
+	{
+		retval = (u == 0) ? 1 : countDigits(u);
+		count += retval;
+		print_number(u);
+	}
 	else
 	{
 		return (-1);
 	}
+	return (count);
 }
+
 /**
 * handle_integer - Converts an integer value to its string representation and
 * prints it to
@@ -127,7 +133,7 @@ int handle_integer(va_list args)
 			num = num - (digit * exp);
 			exp = exp / 10;
 			i++;
-		}	
+		}
 	}
 	_putchar(arg + '0');
 	return (i);
