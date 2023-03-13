@@ -1,4 +1,4 @@
-TH _printf 3 "12 March 2023" "" "_printf man page"
+.TH _printf 3 "12 March 2023" "" "_printf man page"
 .SH NAME
 _printf - a function that writes output to stdout using a format string
 
