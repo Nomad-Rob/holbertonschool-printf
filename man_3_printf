@@ -3,7 +3,7 @@ TH _printf 3 "12 March 2023" "" "_printf man page"
 _printf - a function that writes output to stdout using a format string
 
 .SH SYNOPSIS
-.B #include "main.h"
+.B #include \(dqmain.h\(dq
 
 .BI "int _printf(const char *" "format, ..." ");"
 
