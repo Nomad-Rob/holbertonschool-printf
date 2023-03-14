@@ -83,7 +83,7 @@ This program will output "Hello! My name is \fIname\fR and I am \fIage\fR years 
 .BR printf (3)
 
 .SH AUTHORS
-Dominick Keeling, Bitch Boy Rob
+Dominick Keeling, Robert Farley
 
 .SH BUGS
 The \fB_printf\fR function ------------------------
